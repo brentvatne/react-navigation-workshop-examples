@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-reanimated/react-native-reanimated.d.ts b/node_modules/react-native-reanimated/react-native-reanimated.d.ts
+index d38335d..cb88d73 100644
+--- a/node_modules/react-native-reanimated/react-native-reanimated.d.ts
++++ b/node_modules/react-native-reanimated/react-native-reanimated.d.ts
+@@ -80,7 +80,7 @@ declare module 'react-native-reanimated' {
+       deceleration: Adaptable<number>;
+     }
+     export interface BackwardCompatibleWrapper {
+-      start: (callback : ({ finished: boolean }) => any) => void;
++      start: (callback?: (data: { finished: boolean }) => any) => void;
+       stop: () => void;
+     }
+ 
