@@ -4,7 +4,7 @@ import * as Sections from './sections';
 
 export default class App extends React.Component {
   state = {
-    activeSection: 'Stack',
+    activeSection: null,
   };
 
   render() {
@@ -12,11 +12,16 @@ export default class App extends React.Component {
       let Section = Sections[this.state.activeSection];
       return <Section />;
     }
+
     return (
       <View style={styles.container}>
         <Button
           title="Go to stack example"
           onPress={() => this.setState({ activeSection: 'Stack' })}
+        />
+        <Button
+          title="Go to search example"
+          onPress={() => this.setState({ activeSection: 'Search' })}
         />
       </View>
     );
