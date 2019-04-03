@@ -4746,6 +4746,11 @@ react-native-gesture-handler@~1.0.14:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+react-native-iphone-x-helper@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.0.tgz#9f8a376eb00bc712115abff4420318a0063fa796"
+  integrity sha512-xIeTo4s77wwKgBZLVRIZC9tM9/PkXS46Ul76NXmvmixEb3ZwqGdQesR3zRiLMOoIdfOURB6N9bba9po7+x9Bag==
+
 react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
@@ -4865,11 +4870,12 @@ react-native-view-shot@2.5.0:
     xmldoc "^0.4.0"
     yargs "^9.0.0"
 
-react-navigation-addon-search-layout@^0.12.4:
-  version "0.12.4"
-  resolved "https://registry.yarnpkg.com/react-navigation-addon-search-layout/-/react-navigation-addon-search-layout-0.12.4.tgz#2a8bdd5b3fd35d54a7ff51e480359c9042acca84"
-  integrity sha512-PnYFxut/uWz3vXJuh2X5N23QlSKjX5RMytEgAkfRlHJuLJoBSOLNN9wNsz04OjOFHUCuKJ+Jz8VfHRrClqB0+g==
+react-navigation-addon-search-layout@^0.12.5:
+  version "0.12.5"
+  resolved "https://registry.yarnpkg.com/react-navigation-addon-search-layout/-/react-navigation-addon-search-layout-0.12.5.tgz#2e16792f195b9a0dd81761c9ac3e86bc76e5292b"
+  integrity sha512-ep1i3/Epe11QX8VF1KasSDizq/q7NZ98eA8a3Ml+Tcq31XeJsTyv1nrVpdEpCxfQLbT2jG/hedhPGgboEIwVBQ==
   dependencies:
+    react-native-iphone-x-helper "^1.2.0"
     react-native-platform-touchable "^1.1.1"
 
 react-navigation-drawer@1.3.0:
@@ -4965,6 +4971,11 @@ readable-stream@^2.0.1, readable-stream@^2.0.6, readable-stream@^2.2.2, readable
     safe-buffer "~5.1.1"
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
+
+reanimated-bottom-sheet@^1.0.0-alpha.8:
+  version "1.0.0-alpha.8"
+  resolved "https://registry.yarnpkg.com/reanimated-bottom-sheet/-/reanimated-bottom-sheet-1.0.0-alpha.8.tgz#b4092b2d1bec40a697bae7c77f013fdf7698a0e8"
+  integrity sha512-vzwKx0IBlxx2r0fL1Ur5tBUBAQP1Ep9H0e7QJ9OEJcwIbNuMge0geWJgutAakNIOTrzbKfr2LMJLsl48S8v6JQ==
 
 regenerate-unicode-properties@^8.0.2:
   version "8.0.2"

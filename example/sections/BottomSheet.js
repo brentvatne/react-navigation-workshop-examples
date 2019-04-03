@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Button,
   StyleSheet,
   Text,
   View,
@@ -13,7 +14,7 @@ import {
 } from 'react-navigation';
 import BottomSheet from 'reanimated-bottom-sheet';
 import Animated from 'react-native-reanimated';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TapGestureHandler, State } from 'react-native-gesture-handler';
 
 class HomeScreen extends React.Component {
@@ -53,6 +54,10 @@ class ProfileScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Your profile goes here!</Text>
+        <Button
+          title="Show the profile sheet"
+          onPress={() => this.props.screenProps.showProfileSwitcher()}
+        />
       </View>
     );
   }
@@ -64,7 +69,7 @@ const Home = createStackNavigator(
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => (
         <MaterialCommunityIcons
-          color={tintColor as string}
+          color={tintColor}
           name="home-circle"
           size={25}
         />
@@ -78,7 +83,7 @@ const Search = createStackNavigator(
     navigationOptions: {
       tabBarIcon: ({ tintColor }) => (
         <MaterialCommunityIcons
-          color={tintColor as string}
+          color={tintColor}
           name="database-search"
           size={25}
         />
@@ -92,7 +97,7 @@ const Profile = createStackNavigator(
     navigationOptions: ({ screenProps }) => ({
       tabBarIcon: ({ tintColor }) => (
         <MaterialCommunityIcons
-          color={tintColor as string}
+          color={tintColor}
           name="face-profile"
           size={25}
         />
@@ -115,7 +120,7 @@ const Navigation = createAppContainer(Tabs);
 const { greaterOrEq, cond } = Animated;
 
 class ProfileSwitcher extends React.Component {
-  sheetRef: React.RefObject<BottomSheet> = React.createRef();
+  sheetRef = React.createRef();
 
   renderContent = () => {
     return (
@@ -156,11 +161,7 @@ class ProfileSwitcher extends React.Component {
   });
   pointerEvents = cond(greaterOrEq(0.9, this.sheetOpenValue), 'auto', 'none');
 
-  handleTapStateChange = ({
-    nativeEvent,
-  }: {
-    nativeEvent: { state: State };
-  }) => {
+  handleTapStateChange = ({ nativeEvent }) => {
     if (nativeEvent.state === State.ACTIVE) {
       this.hide();
     }
@@ -196,7 +197,7 @@ class ProfileSwitcher extends React.Component {
 }
 
 export default class App extends React.Component {
-  profileSwitcherRef: React.RefObject<ProfileSwitcher> = React.createRef();
+  profileSwitcherRef = React.createRef();
 
   render() {
     return (

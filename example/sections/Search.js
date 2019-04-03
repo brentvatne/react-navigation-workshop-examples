@@ -100,8 +100,6 @@ class SearchScreen extends React.Component {
   }
 }
 
-console.log(StackViewTransitionConfigs.NoAnimation);
-
 let SearchStack = createStackNavigator(
   {
     Home: HomeScreen,
