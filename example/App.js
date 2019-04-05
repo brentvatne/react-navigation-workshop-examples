@@ -2,6 +2,11 @@ import React from 'react';
 import { ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import * as Sections from './sections';
+import { useScreens } from 'react-native-screens';
+
+// You can uncomment the followign line to use better native primitives for
+// screens! It is still in alpha, but for most cases it will work well:
+// useScreens();
 
 class Button extends React.Component {
   render() {
@@ -69,6 +74,10 @@ export default class App extends React.Component {
           onPress={() => this.setState({ activeSection: 'Nesting' })}
         />
         <Button
+          title="Material bottom tabs"
+          onPress={() => this.setState({ activeSection: 'MaterialBottomTabs' })}
+        />
+        <Button
           title="Material top tabs"
           onPress={() => this.setState({ activeSection: 'MaterialTopTabs' })}
         />
@@ -89,8 +98,16 @@ export default class App extends React.Component {
           onPress={() => this.setState({ activeSection: 'Themes' })}
         />
         <Button
+          title="Localization"
+          onPress={() => this.setState({ activeSection: 'Localization' })}
+        />
+        <Button
           title="Bottom sheet"
           onPress={() => this.setState({ activeSection: 'BottomSheet' })}
+        />
+        <Button
+          title="Authentication"
+          onPress={() => this.setState({ activeSection: 'Authentication' })}
         />
         <StatusBar hidden={false} barStyle="default" />
       </ScrollView>
@@ -104,6 +121,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   contentContainer: {
-    paddingVertical: 50,
+    paddingTop: 50,
+    paddingBottom: 30,
   },
 });

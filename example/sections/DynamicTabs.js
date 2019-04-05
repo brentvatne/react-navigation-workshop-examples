@@ -15,7 +15,13 @@ class GenericTabScreen extends React.Component {
         </Text>
         <Button
           title="Go back"
-          onPress={() => this.props.navigation.goBack(null)}
+          onPress={() => {
+            // This won't work!
+            this.props.navigation.goBack(null);
+
+            // This is an alternative but it's not great!
+            // this.props.screenProps.parentNavigator.goBack(null)
+          }}
         />
       </View>
     );
@@ -49,6 +55,9 @@ class HomeScreen extends React.Component {
 class TabsScreen extends React.Component {
   constructor(props) {
     super(props);
+
+    // {A: GenericTabScreen, B: GenericTabScreen, C: GenericTabScreen}
+    // {1: GenericTabScreen, 2: GenericTabScreen, 3: GenericTabScreen}
     let routeConfigMap = props.navigation
       .getParam('names')
       .reduce((acc, name) => {
@@ -68,6 +77,9 @@ class TabsScreen extends React.Component {
       <Navigator
         detached
         onNavigationStateChange={(prevState, state) => console.log(state)}
+        // You probably do not want to do this! But you can pass through the parent navigator
+        // if you absolutely must.
+        // screenProps={{ parentNavigator: this.props.navigation }}
       />
     );
   }
